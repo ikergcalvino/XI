@@ -15,7 +15,7 @@ f4 = 880;
 A1 = 0.1;
 A2 = 0.1;
 A3 = 0.1;
-A3 = 0.1;
+A4 = 0.1;
 
 t = 1/fs : 1/fs : T; % Vector eje tiempo
 L = length(t); % Longitud del vector
@@ -68,7 +68,7 @@ elseif filtro == 3
     Hdef = 1 - (Hdef2 - Hdef1); % Filtro banda eliminada
 end
 
-Ydef = xf .* Hdef; % Señal filtrada en frecuencia
+Ydef = Xdef .* Hdef; % Señal filtrada en frecuencia
 
 ydet = ifft(fftshift(Ydef)); % Cálculo de la transformada de Fourier inversa
 ydet = real(ydet); % Señal filtrada en tiempo
