@@ -6,16 +6,16 @@ fs = 48000; % Frecuencia de muestreo
 T = 1; % Período
 
 % Frecuencias
-f1 = 440;
-f2 = 550;
-f3 = 660;
-f4 = 880;
+f1 = 150;
+f2 = 2 * f1;
+f3 = 3 * f1;
+f4 = 4 * f1;
 
 % Amplitudes
-A1 = 0.1;
-A2 = 0.1;
-A3 = 0.1;
-A4 = 0.1;
+A1 = 1;
+A2 = 1;
+A3 = 1;
+A4 = 1;
 
 t = 1/fs : 1/fs : T; % Vector eje tiempo
 L = length(t); % Longitud del vector
@@ -38,8 +38,8 @@ Xdef = fftshift(fft(xdet));
 
 f = -fs/2 + fs/L : fs/L : fs/2; % Declaración del eje de frecuencias
 
-flow = 600; % Frecuencia de corte (Hz) del filtro paso bajo
-fhigh = 600; % Frecuencia de corte (Hz) del filtro paso alto
+flow = 200; % Frecuencia de corte (Hz) del filtro paso bajo
+fhigh = 100; % Frecuencia de corte (Hz) del filtro paso alto
 
 % Filtro paso bajo (low)
 Hdef1 = zeros(1, L/2);
