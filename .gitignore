@@ -1,0 +1,5 @@
+# Word files.
+*.docx
+
+# Portable Network Graphics
+*.png
